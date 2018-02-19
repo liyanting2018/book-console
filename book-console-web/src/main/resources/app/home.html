@@ -1,0 +1,83 @@
+<header class="main-header ">
+    <a href="index.html" class="logo">
+        <span class="logo-mini"><b>科研成果</b></span>
+        <span class="logo-lg"><b>科研成果统计平台</b></span>
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a class="sidebar-toggle" data-toggle="offcanvas" role="button" ng-click="sidebarToggle()">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-user"></i>
+                        <span>{{currentUser.chineseName}}</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:;" ng-click="logout()">
+                        <i class="fa fa-sign-out"></i>
+                        <span>退出</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li ng-if="isAuthorized(userRoles.MANAGER)" class="active treeview">
+                <a ui-sref="baseDataConfig">
+                    <i class="fa fa-dashboard"></i> <span> 成果管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ui-sref-active="active"><a ui-sref="baseDataConfig.fruit_category"><i class="fa fa-circle-o"></i> 成果管理</a></li>
+                </ul>
+            </li>
+           
+            <li class="treeview" ng-if="isAuthorized([userRoles.NORMAL,userRoles.MANAGER])">
+                <a href="#" ui-sref="punishDateConfig">
+                    <i class="glyphicon glyphicon-book"></i> <span>个人成果</span> <i
+                        class="fa fa-angle-right pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ui-sref-active="active"><a ui-sref="punishDateConfig.punish"><i class="fa fa-circle-o"></i> 个人成果</a></li>
+                    
+                </ul>
+            </li>
+
+            <li class="treeview" ng-if="isAuthorized([userRoles.EDITOR,userRoles.MANAGER])" ui-sref="attribute.localAttribute">
+                <a href="#" ui-sref="attribute.localAttribute">
+                    <i class="glyphicon glyphicon-bookmark"></i> <span>成果审核</span> <i
+                        class="fa fa-angle-right pull-right"></i>
+                </a>
+            </li>
+            <li class="treeview" ng-if="isAuthorized(userRoles.MANAGER)"　ui-sref="admin.user">
+                <a ui-sref="admin.user">
+                    <i class="fa fa-th"></i> <span> 系统管理</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li ui-sref-active="active"><a ui-sref="admin.user"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+<div class="content-wrapper">
+    <section class="content" ui-view>
+        Welcome !
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->

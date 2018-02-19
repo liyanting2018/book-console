@@ -1,0 +1,76 @@
+<form class="form-horizontal w5c-form" name="addForm" novalidate w5c-form-validate="">
+    <div cg-busy="loading">
+        <div class="modal-header">
+            <h3 class="modal-title">新增风控业务单元</h3>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">业务:</label>
+                <div class="col-sm-8">
+                    <select name="selectedBusiness"  class="form-control"
+                            ng-model="access.selectedBusiness"
+                            ng-options="business.name for business in businesses track by business.code"
+                            required>
+                        <option value="">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">事件:</label>
+                <div class="col-sm-8">
+                    <select name="selectedEvent" class="form-control"
+                            ng-model="access.selectedEvent"
+                            ng-options="event.name for event in events track by event.code"
+                            required>
+                        <option value="">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">规则组:</label>
+                <div class="col-sm-8">
+                    <ui-select class="form-control" multiple ng-model="access.rules" theme="bootstrap" title="规则组" on-remove="onRuleRemove()">
+                        <ui-select-match placeholder="规则组">{{$item.name}}</ui-select-match>
+                        <ui-select-choices repeat="rule in rules"
+                                           refresh="refreshRules($select.search)" refresh-delay="300">
+                            <div ng-bind-html="rule.name"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <input name="accessRules" type="hidden" required ng-model="access.rules">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">惩罚:</label>
+                <div class="col-sm-8">
+                    <select name="selectedPunish" class="form-control"
+                            ng-model="access.selectedPunish"
+                            ng-options="punish.punishGroupname for punish in punishs track by punish.id"
+                            required>
+                        <option value="">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">返回信息:</label>
+                <div class="col-sm-8">
+                    <input name="reply" ng-model="access.reply" type="text" class="form-control input-sm"
+                           placeholder="返回信息">
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="reset" class="btn btn-default btn-sm" ng-click="close();">取消</button>
+                <button type="submit" class="btn btn-success" w5c-form-submit="confirm();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 确认
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

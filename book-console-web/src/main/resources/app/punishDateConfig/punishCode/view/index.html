@@ -1,0 +1,59 @@
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">惩罚CODE管理</h3>
+    </div>
+
+    <div class="box-search">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>惩罚CODE名称: </label>
+                <input ng-model="punishName" type="text" class="form-control input-sm" placeholder="惩罚CODE名称">
+            </div>
+            <button ng-click="search()" class="btn btn-flat btn-sm btn-info"><i class="fa fa-search"></i>搜索
+            </button>
+            <button class="btn btn-flat btn-sm btn-info" ng-click="add()">
+                        <i class="fa fa-pencil fa-fw"></i>&nbsp;新增</button>
+        </form>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered">
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>惩罚CODE名称</th>
+                <th>惩罚CODE</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="punishCode in punishCodes" >
+                <td>{{(page-1)*size + $index + 1}}</td>
+                <td>{{punishCode.punishName}}</td>
+                <td>{{punishCode.punishCode}}</td>
+                <td>
+                    <button class="btn btn-flat btn-sm btn-info" ng-click="edit(punishCode)">
+                        <i class="fa fa-pencil fa-fw"></i>&nbsp;编辑</button>
+                    <!-- <button class="btn btn-flat btn-sm btn-info" ng-click="delete(punish)">
+                     
+                    <i class="fa fa-pencil fa-fw"></i>&nbsp;删除</button> -->
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="box-footer">
+        <ul uib-pagination class="pagination-sm no-margin pull-right" boundary-link-numbers="true"
+            first-text="首页"
+            last-text="尾页"
+            previous-text="前一页"
+            next-text="后一页"
+            total-items="total"
+            ng-model="page"
+            ng-change="pageChanged()"
+            items-per-page="size"
+            max-size="10"
+            rotate="false">
+        </ul>
+    </div>
+
+    <div class="overlay" ng-show="loading">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+</div>

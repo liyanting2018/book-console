@@ -1,0 +1,38 @@
+<form class="form-horizontal w5c-form" name="addForm" novalidate w5c-form-validate="">
+    <div cg-busy="loading">
+        <div class="modal-header">
+            <h3 class="modal-title">编辑惩罚CODE</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">惩罚CODE名称:</label>
+                <div class="col-sm-8">
+                    <input name="punishCode.punishName" ng-model="punishCode.punishName" type="text" class="form-control input-sm"
+                           placeholder="名称（唯一）"
+                           ng-maxlength="255"
+                           maxlength="255"
+                           required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-sm-3 control-label">惩罚CODE:</label>
+                <div class="col-sm-8">
+                    <input name="punishCode.punishCode" readonly="readonly" ng-model="punishCode.punishCode" type="text" class="form-control input-sm"
+                           placeholder="惩罚CODE（唯一）"
+                           ng-maxlength="255"
+                           maxlength="255"
+                           required>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="reset" class="btn btn-default btn-sm" ng-click="close();">取消</button>
+                <button type="submit" class="btn btn-success" w5c-form-submit="confirm();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 确认
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

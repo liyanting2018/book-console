@@ -1,0 +1,19 @@
+spring:
+    application.name: book-console
+
+spring.datasource.url: jdbc:h2:mem:testdb
+#spring.datasource.url: jdbc:mysql://localhost/test
+spring.datasource.username: sa
+spring.datasource.password: sa
+spring.datasource.driverClassName : org.h2.Driver
+#spring.datasource.driverClassName : com.mysql.jdbc.Driver
+spring.datasource.schema: db/schema.sql
+spring.datasource.data: db/data.sql
+spring.h2.console.enabled: true  
+
+server:
+    port: 8080
+
+admin.password: e10adc3949ba59abbe56e057f20f883e
+
+app.name: book-console

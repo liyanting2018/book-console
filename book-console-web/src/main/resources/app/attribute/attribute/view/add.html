@@ -1,0 +1,52 @@
+<form class="form-horizontal w5c-form" name="addForm" novalidate w5c-form-validate="">
+    <div cg-busy="loading">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close();"><span
+                    aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title">新增属性</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">属性名称:</label>
+                <div class="col-sm-8">
+                    <input name="name" ng-model="attribute.generatedKey" type="text" class="form-control input-sm"
+                           placeholder="名称（以字母或者下划线开头且非中文,唯一）"
+                           ng-maxlength="255"
+                           maxlength="255"
+                           required ng-pattern="/^[A-Za-z_][0-9A-Za-z_#]*$/">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">依赖属性名称:</label>
+                <div class="col-sm-8">
+                    <input name="subKeys" ng-model="attribute.subKeys" type="text" class="form-control input-sm"
+                           placeholder="名称（以字母或者下划线开头且非中文）"
+                           ng-maxlength="255"
+                           maxlength="255"
+                           required ng-pattern="/^[A-Za-z_][0-9A-Za-z_#:]*$/">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">函数:</label>
+                <div class="col-sm-8">
+                    <input name="generateFunction" ng-model="attribute.generateFunction" type="text"
+                           class="form-control input-sm"
+                           ng-maxlength="255"
+                           maxlength="255"
+                           required>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="reset" class="btn btn-default btn-sm" ng-click="close();">取消</button>
+                <button type="submit" class="btn btn-success" w5c-form-submit="confirm();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 确认
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
