@@ -1,0 +1,25 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- <bean id="dataSource" class="org.h2.jdbcx.JdbcConnectionPool"
+        destroy-method="dispose">
+        <constructor-arg>
+            <bean class="org.h2.jdbcx.JdbcDataSource">
+                内存模式
+                <property name="URL" value="jdbc:h2:mem:test" />
+                文件模式
+                <property name="URL" value="jdbc:h2:testRestDB" />                 
+                <property name="user" value="sa" />
+                <property name="password" value="sa" />
+            </bean>
+        </constructor-arg>
+    </bean> -->
+    
+   <!--  <jdbc:initialize-database data-source="dataSource"
+        ignore-failures="ALL">
+        <jdbc:script location="classpath:db/schema.sql" />
+        <jdbc:script location="classpath:db/data.sql" />
+    </jdbc:initialize-database> -->
+
+</beans>

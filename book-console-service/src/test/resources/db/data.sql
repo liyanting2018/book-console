@@ -1,0 +1,1 @@
+INSERT INTO user VALUES(1, 'Hello',1,'Hello','Hello','Hello','Hello','2017-12-15 09:20:30');
