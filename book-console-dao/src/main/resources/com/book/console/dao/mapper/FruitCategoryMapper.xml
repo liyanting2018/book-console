@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.console.dao.mapper.FruitCategoryMapper" >
+  <resultMap id="BaseResultMap" type="com.book.console.dao.model.FruitCategory" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fruit_category" property="fruitCategory" jdbcType="VARCHAR" />
+    <result column="fruit_type" property="fruitType" jdbcType="VARCHAR" />
+    <result column="fruit_level" property="fruitLevel" jdbcType="VARCHAR" />
+    <result column="fruit_DESC" property="fruitDesc" jdbcType="VARCHAR" />
+    <result column="crt_user" property="crtUser" jdbcType="VARCHAR" />
+    <result column="cup_user" property="cupUser" jdbcType="VARCHAR" />
+    <result column="crt_time" property="crtTime" jdbcType="TIMESTAMP" />
+    <result column="upt_time" property="uptTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+ 
+</mapper>
