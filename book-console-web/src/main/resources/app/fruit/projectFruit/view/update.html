@@ -1,0 +1,120 @@
+<form class="form-horizontal w5c-form" name="addForm" novalidate w5c-form-validate="">
+    <div cg-busy="loading">
+        <div class="modal-header">
+            <h3 class="modal-title">编辑教科研项目</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">项目名称:</label>
+                <div class="col-sm-8">
+                    <input name="fruitCode" ng-model="detail.projectNm" type="text"
+                           class="form-control input-sm"
+                           placeholder="成果编号"
+                           ng-maxlength="128"
+                           maxlength="128"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">经费（万元）:</label>
+                <div class="col-sm-8">
+                    <input name="projectFee" ng-model="detail.projectFee" type="text"
+                           class="form-control input-sm"
+                           placeholder="经费（万元）"
+                           ng-maxlength="10"
+                           maxlength="10"
+                           required>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <label class="col-sm-3 control-label">开始日期:</label>
+                <div class="col-sm-8">
+                    <p class="input-group">
+                        <input type="text"  class="form-control" uib-datepicker-popup="{{formats}}"
+                               ng-model="detail.startDate"
+                               is-open="popup1.opened" datepicker-options="dateOptions"
+                               close-text="Close" alt-input-formats="altInputFormats" showError="时间格式错误"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup1.opened=true"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <input type="hidden" name="startTime" class="form-control" ng-model="detail.startDate" ng-required="true"/>
+                </div>
+            </div>
+            
+             <div class="form-group">
+                <label class="col-sm-3 control-label">结束日期:</label>
+                <div class="col-sm-8">
+                    <p class="input-group">
+                        <input type="text"  class="form-control" uib-datepicker-popup="{{formats}}"
+                               ng-model="detail.endDate"
+                               is-open="popup2.opened" datepicker-options="dateOptions"
+                               close-text="Close" alt-input-formats="altInputFormats" showError="时间格式错误"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup2.opened=true"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <input type="hidden" name="endTime" class="form-control" ng-model="detail.endDate" ng-required="true"/>
+                </div>
+            </div>
+            
+          <div class="form-group">
+                <label class="col-sm-3 control-label">立项单位:</label>
+                <div class="col-sm-8">
+                     <input name="projectHead" ng-model="detail.projectUnit" type="text"
+                           class="form-control input-sm"
+                           placeholder="立项单位"
+                           ng-maxlength="100"
+                           maxlength="100"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">项目负责人:</label>
+                <div class="col-sm-8">
+                     <input name="projectHead" ng-model="detail.projectHead" type="text"
+                           class="form-control input-sm"
+                           placeholder="项目负责人"
+                           ng-maxlength="100"
+                           maxlength="100"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">项目组成员:</label>
+                <div class="col-sm-8">
+                     <input name="projectMember" ng-model="detail.projectMember" type="text"
+                           class="form-control input-sm"
+                           placeholder="项目组成员，中间逗号分隔。例如：张三，李四，王五"
+                           ng-maxlength="50"
+                           maxlength="50"
+                           required>
+                </div>
+            </div>
+			<div class="form-group">
+                <label class="col-sm-3 control-label">教科研项目类型:</label>
+                <div class="col-sm-8">
+                      <select  name="fruitCategoryId"   class="form-control"
+                            ng-model="detail.fruitCategoryId">
+                            <option value="">请选择</option>
+                            <option value="A01">科研项目</option>
+                            <option value="A02">教研项目</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            
+        <div class="modal-footer">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="reset" class="btn btn-default btn-sm" ng-click="close();">取消</button>
+                <button type="submit" class="btn btn-success" w5c-form-submit="confirm();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 确认
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+<form class="form-horizontal w5c-form" name="editForm" novalidate w5c-form-validate="">
+    <div class="modal-header">
+        <h3 class="modal-title">确认删除？</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">项名称:</label>
+            <div class="col-sm-8 checkbox">
+                {{project.projectName}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">索引名称:</label>
+            <div class="col-sm-8 checkbox">
+                <span ng-repeat="item in project.indexList">{{item.indexName}}<br/></span>
+            </div>
+        </div>
+    <div class="modal-footer">
+        <div class="col-sm-offset-3 col-sm-9">
+            <button type="reset" class="btn btn-default btn-sm" ng-click="close();">取消</button>
+            <button type="submit" class="btn btn-success" w5c-form-submit="confirm();" >
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 确认
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.console.dao.mapper.PatentFruitMapper" >
+  <resultMap id="BaseResultMap" type="com.book.console.dao.model.PatentFruit" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="patent_nm" property="patentNm" jdbcType="VARCHAR" />
+    <result column="patent_id" property="patentId" jdbcType="VARCHAR" />
+    <result column="inventor" property="inventor" jdbcType="VARCHAR" />
+    <result column="inventor_num" property="inventorNum" jdbcType="VARCHAR" />
+    <result column="patent_type" property="patentType" jdbcType="VARCHAR" />
+    <result column="apply_date" property="applyDate" jdbcType="DATE" />
+    <result column="auth_date" property="authDate" jdbcType="DATE" />
+    <result column="diploma_id" property="diplomaId" jdbcType="VARCHAR" />
+    <result column="fruit_category_id" property="fruitCategoryId" jdbcType="VARCHAR" />
+    <result column="fruit_status" property="fruitStatus" jdbcType="VARCHAR" />
+    <result column="crt_user" property="crtUser" jdbcType="VARCHAR" />
+    <result column="cup_user" property="cupUser" jdbcType="VARCHAR" />
+    <result column="crt_time" property="crtTime" jdbcType="TIMESTAMP" />
+    <result column="upt_time" property="uptTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+ 
+</mapper>

@@ -1,0 +1,134 @@
+<form class="form-horizontal w5c-form" name="addForm" novalidate w5c-form-validate="">
+    <div cg-busy="loading">
+        <div class="modal-header">
+            <h3 class="modal-title">新增专利</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">专利名称:</label>
+                <div class="col-sm-8">
+                    <input name="patentNm" ng-model="detail.patentNm" type="text"
+                           class="form-control input-sm"
+                           placeholder="专利名称"
+                           ng-maxlength="128"
+                           maxlength="128"
+                           required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">专利号:</label>
+                <div class="col-sm-8">
+                    <input name="patentId" ng-model="detail.patentId" type="text"
+                           class="form-control input-sm"
+                           placeholder="专利号"
+                           ng-maxlength="100"
+                           maxlength="100"
+                           required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-sm-3 control-label">发明人:</label>
+                <div class="col-sm-8">
+                    <input name="inventor" ng-model="detail.inventor" type="text"
+                           class="form-control input-sm"
+                           placeholder="发明人"
+                           ng-maxlength="100"
+                           maxlength="100"
+                           required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-sm-3 control-label">排名:</label>
+                <div class="col-sm-8">
+                    <input name="inventorNum" ng-model="detail.inventorNum" type="text"
+                           class="form-control input-sm"
+                           placeholder="排名"
+                           ng-maxlength="100"
+                           maxlength="100"
+                           required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-sm-3 control-label">专利类型:</label>
+                <div class="col-sm-8">
+                      <select  name="patentType"   class="form-control"
+                            ng-model="detail.patentType">
+                            <option value="">请选择</option>
+                            <option value="发明专利">发明专利</option>
+                            <option value="实用新型专利">实用新型专利</option>
+                            <option value="外观设计专利">外观设计专利</option>
+                    </select>
+                </div>
+           </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">申请日:</label>
+                <div class="col-sm-8">
+                    <p class="input-group">
+                        <input type="text"  class="form-control" uib-datepicker-popup="{{formats}}"
+                               ng-model="detail.applyDate"
+                               is-open="popup1.opened" datepicker-options="dateOptions"
+                               close-text="Close" alt-input-formats="altInputFormats" showError="时间格式错误"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup1.opened=true"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <input type="hidden" name="startTime" class="form-control" ng-model="detail.applyDate" ng-required="true"/>
+                </div>
+            </div>
+            
+             <div class="form-group">
+                <label class="col-sm-3 control-label">授权日:</label>
+                <div class="col-sm-8">
+                    <p class="input-group">
+                        <input type="text"  class="form-control" uib-datepicker-popup="{{formats}}"
+                               ng-model="detail.authDate"
+                               is-open="popup2.opened" datepicker-options="dateOptions"
+                               close-text="Close" alt-input-formats="altInputFormats" showError="时间格式错误"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup2.opened=true"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                    <input type="hidden" name="endTime" class="form-control" ng-model="detail.authDate" ng-required="true"/>
+                </div>
+            </div>
+            
+          <div class="form-group">
+                <label class="col-sm-3 control-label">证书号:</label>
+                <div class="col-sm-8">
+                     <input name="diplomaId" ng-model="detail.diplomaId" type="text"
+                           class="form-control input-sm"
+                           placeholder="证书号"
+                           ng-maxlength="100"
+                           maxlength="100"
+                           required>
+                </div>
+            </div>
+            
+			<div class="form-group">
+                <label class="col-sm-3 control-label">专利项目类型:</label>
+                <div class="col-sm-8">
+                      <select  name="fruitCategoryId"   class="form-control"
+                            ng-model="detail.fruitCategoryId">
+                            <option value="">请选择</option>
+                            <option value="D01">授权专利</option>
+                            <option value="D02">发明专利</option>
+                    </select>
+                </div>
+                
+            </div>
+            
+        <div class="modal-footer">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="reset" class="btn btn-default btn-sm" ng-click="close();">取消</button>
+                <button type="submit" class="btn btn-success" w5c-form-submit="confirm();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 确认
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

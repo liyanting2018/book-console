@@ -47,5 +47,23 @@ CREATE TABLE
         upt_time TIMESTAMP,
         PRIMARY KEY(id)
 );
-
+CREATE TABLE
+    project_fruit
+    (
+        id INT NOT NULL AUTO_INCREMENT,
+        project_nm VARCHAR(10) NOT NULL,
+        project_fee VARCHAR(10),
+        start_date DATE,
+        end_date DATE,
+        project_unit VARCHAR(100),
+        project_head VARCHAR(100),
+        project_member VARCHAR(10),
+        fruit_category_id VARCHAR(255),
+        fruit_status VARCHAR(255),
+        crt_user VARCHAR(10),
+        upt_user VARCHAR(10),
+        crt_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        upt_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    );
 

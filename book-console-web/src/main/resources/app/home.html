@@ -47,12 +47,15 @@
            
             <li class="treeview" ng-if="isAuthorized([userRoles.NORMAL,userRoles.MANAGER])">
                 <a href="#" ui-sref="punishDateConfig">
-                    <i class="glyphicon glyphicon-book"></i> <span>个人成果</span> <i
+                    <i class="glyphicon glyphicon-book"></i> <span>成果录入</span> <i
                         class="fa fa-angle-right pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li ui-sref-active="active"><a ui-sref="punishDateConfig.punish"><i class="fa fa-circle-o"></i> 个人成果</a></li>
-                    
+                    <li ui-sref-active="active"><a ui-sref="fruit.projectFruit"><i class="fa fa-circle-o"></i> 教科研项目</a></li>
+                    <li ui-sref-active="active"><a ui-sref="fruit.paperFruit"><i class="fa fa-circle-o"></i> 教科研论文</a></li>
+                    <li ui-sref-active="active"><a ui-sref="fruit.bookFruit"><i class="fa fa-circle-o"></i> 教材与专著</a></li>
+                    <li ui-sref-active="active"><a ui-sref="fruit.patentFruit"><i class="fa fa-circle-o"></i> 专利</a></li>
+<!--                     <li ui-sref-active="active"><a ui-sref="fruit.patentFruit"><i class="fa fa-circle-o"></i> 获奖情况</a></li> -->
                 </ul>
             </li>
 

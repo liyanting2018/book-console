@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.book.console.dao.mapper.ProjectFruitMapper" >
+  <resultMap id="BaseResultMap" type="com.book.console.dao.model.ProjectFruit" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="project_nm" property="projectNm" jdbcType="VARCHAR" />
+    <result column="project_fee" property="projectFee" jdbcType="VARCHAR" />
+    <result column="start_date" property="startDate" jdbcType="DATE" />
+    <result column="end_date" property="endDate" jdbcType="DATE" />
+    <result column="project_unit" property="projectUnit" jdbcType="VARCHAR" />
+    <result column="project_head" property="projectHead" jdbcType="VARCHAR" />
+    <result column="project_member" property="projectMember" jdbcType="VARCHAR" />
+    <result column="fruit_category_id" property="fruitCategoryId" jdbcType="VARCHAR" />
+    <result column="fruit_status" property="fruitStatus" jdbcType="VARCHAR" />
+    <result column="crt_user" property="crtUser" jdbcType="VARCHAR" />
+    <result column="upt_user" property="uptUser" jdbcType="VARCHAR" />
+    <result column="crt_time" property="crtTime" jdbcType="TIMESTAMP" />
+    <result column="upt_time" property="uptTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+ 
+</mapper>

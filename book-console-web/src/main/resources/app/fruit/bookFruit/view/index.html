@@ -1,0 +1,87 @@
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">教材与专著管理</h3>
+    </div>
+
+    <div class="box-search">
+        <form class="form-inline">
+            <div class="form-group">
+                <label>教材、专著、译著名称: </label>
+                <input ng-model="bookNm" type="text" class="form-control input-sm" placeholder="教材、专著、译著名称">
+            </div>
+            <button ng-click="search()" class="btn btn-flat btn-sm btn-info"><i class="fa fa-search"></i>搜索
+            </button>
+            <button class="btn btn-flat btn-sm btn-info" ng-click="add()">
+                        <i class="fa fa-pencil fa-fw"></i>&nbsp;新增</button>
+        </form>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>序号</th>
+                <th>教材、专著、译著名称</th>
+                <th>出版年月</th>
+                <th>出版单位</th>
+                <th>出版单位书号</th>
+                <th>作者姓名</th>
+                <th>撰写的章节</th>
+                <th>撰写字数</th>
+                <th>类型</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="detail in details" >
+ 				<td>{{detail.id}}</td>	
+                <td>{{detail.bookNm}}</td>
+                <td>{{detail.publishedDate|date:'yyyy-MM'}}</td>
+                <td>{{detail.publishedUnit}}</td>
+                <td>{{detail.publishedNum}}</td>
+                <td>{{detail.bookAuthor}}</td>
+                <td>{{detail.bookChapter}}</td>
+                <td>{{detail.wordCnt}}</td>
+                <td>
+                	<div ng-if="detail.fruitCategoryId=='C01'">教材</div>
+                	<div ng-if="detail.fruitCategoryId=='C02'">专著</div>
+                	<div ng-if="detail.fruitCategoryId=='C03'">译著</div>
+                	</td>
+                <td>
+                	<div ng-if="detail.fruitStatus==0">未提交</div>
+                	<div ng-if="detail.fruitStatus==1">已提交</div>
+                	<div ng-if="detail.fruitStatus==2">审核通过</div>
+                	<div ng-if="detail.fruitStatus==3">系审核未通过</div>
+                	<div ng-if="detail.fruitStatus==4">院审核未通过</div>
+                	<div ng-if="detail.fruitStatus==5">专家审核未通过</div>
+                </td>
+                <td>
+                <div ng-if="detail.fruitStatus==1">
+                </div>
+                    <div ng-if="detail.fruitStatus==0|| detail.fruitStatus==3"><button class="btn btn-flat btn-sm btn-info" ng-click="edit(detail)">
+                        <i class="fa fa-pencil fa-fw"></i>&nbsp;编辑</button></div>
+                    <div ng-if="detail.fruitStatus==0|| detail.fruitStatus==3"> <button class="btn btn-flat btn-sm btn-info" ng-click="delete(detail)">          
+                    <i class="fa fa-pencil fa-fw"></i>&nbsp;删除</button></div>
+                    <div ng-if="detail.fruitStatus==0|| detail.fruitStatus==3"><button class="btn btn-flat btn-sm btn-info" ng-click="upload(detail)">          
+                    <i class="fa fa-pencil fa-fw"></i>&nbsp;提交</button></div> 
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="box-footer">
+        <ul uib-pagination class="pagination-sm no-margin pull-right" boundary-link-numbers="true"
+            first-text="首页"
+            last-text="尾页"
+            previous-text="前一页"
+            next-text="后一页"
+            total-items="total"
+            ng-model="page"
+            ng-change="pageChanged()"
+            items-per-page="size"
+            max-size="10"
+            rotate="false">
+        </ul>
+    </div>
+
+    <div class="overlay" ng-show="loading">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+</div>
