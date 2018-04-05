@@ -75,6 +75,8 @@ public class UserController {
             CookieUtils.setCookie(response, Constants.COOKIE_USER, JsonMapper.nonEmptyMapper().toJson(user));
             return JsonResult.success(user);
         }else if(user.getPassword().equals(password)){
+            CookieUtils.setCookie(response, Constants.COOKIE_USER_TOKEN, user.getUsername());
+            CookieUtils.setCookie(response, Constants.COOKIE_USER, JsonMapper.nonEmptyMapper().toJson(user));
         	return JsonResult.success(user);
         }
         return JsonResult.error(ErrorMessage.LOGIN_PASSWORD_ERROR);
@@ -90,7 +92,7 @@ public class UserController {
     
     @RequestMapping("/register")
     public JsonResult updateRole(@Valid @RequestBody User user, HttpServletResponse response) {
-        user.setCreatedAt(new Date());
+        user.setCrtTime(new Date());
         user.setRole(1);
         userService.add(user);
         return JsonResult.success(user);

@@ -15,6 +15,6 @@
     <result column="mobile" property="mobile" jdbcType="VARCHAR" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="chinese_name" property="chineseName" jdbcType="VARCHAR" />
-    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="crt_time" property="CrtTime" jdbcType="TIMESTAMP" />
   </resultMap>
 </mapper>

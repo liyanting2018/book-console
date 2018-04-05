@@ -24,19 +24,28 @@ public class User implements Serializable {
      * 用户名
      */
     private String username;
-
-    /**
-     * 权限
-     */
-    private Integer role;
     
+    /**
+     * 密码
+     */
+    private String password;
+
     /**
      * 职工工号
      */
     @Column(name = "user_code")
     private String userCode;
     
-
+    /**
+     * 邮箱
+     */
+    private String email;
+    
+    /**
+     * 权限
+     */
+    private Integer role;
+    
     /**
      * 系
      */
@@ -53,33 +62,6 @@ public class User implements Serializable {
     private String title;
     
     /**
-     * 邮箱
-     */
-    private String email;
-    
-    //密碼
-    private String password;
-
- 
-    
-    public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	/**
-     * 获取团队名称
-     * @return
-     */
-    public String teamName() {
-        return Constants.ADMIN_USERNAME.equals(username) ? "" : this.department.substring(0, this.department.lastIndexOf("_"));
-    }
-
-
-    /**
      * 中文名
      */
     @Column(name = "chinese_name")
@@ -88,121 +70,34 @@ public class User implements Serializable {
     /**
      * 创建时间
      */
-    @Column(name = "created_at")
-    private Date createdAt;
+    @Column(name = "crt_time")
+    private Date crtTime;
 
-    private static final long serialVersionUID = 1L;
+	public Integer getId() {
+		return id;
+	}
 
-    /**
-     * 获取主键
-     *
-     * @return id - 主键
-     */
-    public Integer getId() {
-        return id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    /**
-     * 设置主键
-     *
-     * @param id 主键
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    /**
-     * 获取用户名
-     *
-     * @return username - 用户名
-     */
-    public String getUsername() {
-        return username;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    /**
-     * 设置用户名
-     *
-     * @param username 用户名
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    /**
-     * 获取权限
-     *
-     * @return role - 权限
-     */
-    public Integer getRole() {
-        return role;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    /**
-     * 设置权限
-     *
-     * @param role 权限
-     */
-    public void setRole(Integer role) {
-        this.role = role;
-    }
-
-    /**
-     * 获取部门
-     *
-     * @return department - 部门
-     */
-    public String getDepartment() {
-        return department;
-    }
-
-    /**
-     * 设置部门
-     *
-     * @param department 部门
-     */
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    /**
-     * 获取电话
-     *
-     * @return mobile - 电话
-     */
-    public String getMobile() {
-        return mobile;
-    }
-
-    /**
-     * 设置电话
-     *
-     * @param mobile 电话
-     */
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
-
-    /**
-     * 获取头衔
-     *
-     * @return title - 头衔
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * 设置头衔
-     *
-     * @param title 头衔
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    
-    public String getUserCode() {
+	public String getUserCode() {
 		return userCode;
 	}
 
@@ -218,58 +113,59 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	/**
-     * 获取中文名
-     *
-     * @return chinese_name - 中文名
-     */
-    public String getChineseName() {
-        return chineseName;
-    }
+	public Integer getRole() {
+		return role;
+	}
 
-    /**
-     * 设置中文名
-     *
-     * @param chineseName 中文名
-     */
-    public void setChineseName(String chineseName) {
-        this.chineseName = chineseName;
-    }
+	public void setRole(Integer role) {
+		this.role = role;
+	}
 
-    /**
-     * 获取创建时间
-     *
-     * @return created_at - 创建时间
-     */
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+	public String getDepartment() {
+		return department;
+	}
 
-    /**
-     * 设置创建时间
-     *
-     * @param createdAt 创建时间
-     */
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", username=").append(username);
-        sb.append(", role=").append(role);
-        sb.append(", department=").append(department);
-        sb.append(", mobile=").append(mobile);
-        sb.append(", title=").append(title);
-        sb.append(", chineseName=").append(chineseName);
-        sb.append(", createdAt=").append(createdAt);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getChineseName() {
+		return chineseName;
+	}
+
+	public void setChineseName(String chineseName) {
+		this.chineseName = chineseName;
+	}
+
+	public Date getCrtTime() {
+		return crtTime;
+	}
+
+	public void setCrtTime(Date crtTime) {
+		this.crtTime = crtTime;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", userCode=" + userCode
+				+ ", email=" + email + ", role=" + role + ", department=" + department + ", mobile=" + mobile
+				+ ", title=" + title + ", chineseName=" + chineseName + ", crtTime=" + crtTime + "]";
+	}
+    
 }
