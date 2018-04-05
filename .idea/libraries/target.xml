@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="target">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/book-console-web/target/book-console-web-0.0.1-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/book-console-web/target/book-console-web-0.0.1-SNAPSHOT.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
